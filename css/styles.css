@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #080d16;
+    background-image:
+        radial-gradient(ellipse at 15% 10%, rgb(0 217 255 / 8%), transparent 38%),
+        radial-gradient(ellipse at 85% 80%, rgb(143 75 255 / 8%), transparent 42%),
+        linear-gradient(135deg, transparent 49.5%, rgb(255 255 255 / 2%) 50%, transparent 50.5%);
+    background-size: auto, auto, 8px 8px;
+}
+
+#wrapper{
+    max-inline-size: 1200px;
+    inline-size: 100%;
+    margin-inline: auto;
+    padding-inline: 1rem; 
+    min-block-size: 100vh;
+    background-color: #111a2a;
+    border-inline: 1px solid #26354d;
+    box-shadow: 0 0 40px rgb(0 0 0 / 35%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #e8f7ff;
+    text-shadow: 0 0 8px rgb(0 217 255 / 32%), 0 0 20px rgb(0 217 255 / 14%);
+}
+
+p {
+    color: #d7e3f2;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    text-shadow: 0 0 4px rgb(0 217 255 / 10%);
+}
+
+.intro-line {
+    display: block;
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    height: 100px;
+    width: auto;
+    margin-inline: auto;
+}
+
+/* Control bar and the organization of the items in them */
+.top-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem -1rem 0;
+    padding: 0.75rem 1rem;
+    background-color: #0b1220;
+    border-block: 1px solid #26354d;
+}
+
+/* Style Each Link in Nav Bar */
+.top-nav a {
+    padding: 0.6rem 1rem;
+    color: #c4d3e8;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-radius: 4px;
+    transition: color 160ms ease, background-color 160ms ease;
+}
+
+/* Interactive Effects */
+.top-nav a:hover,
+.top-nav a:focus-visible {
+    color: #07111d;
+    background-color: #00d9ff46;
+    outline: none;
+}
+
+/* Grids */
+.placement-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-block: 2rem;
+}
+
+.feature {
+  grid-column: 1 / -1;
+  min-block-size: 14rem;
+  display: flex;
+   flex-direction: column; /* Stack elements vertically */
+  align-items: center;
+  background:
+    radial-gradient(ellipse at 85% 15%, rgb(0 217 255 / 12%), transparent 45%),
+    linear-gradient(135deg, #17263b, #101a2b 72%);
+  box-shadow: 0 12px 32px rgb(0 0 0 / 24%);
+  justify-content: center;
+}
+
+.item {
+  background: linear-gradient(145deg, #18263a, #121c2d);
+  color: #c4d3e8;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.how-it-works {
+  grid-column: 1;
+  min-block-size: 18rem;
+}
+
+.item:hover {
+  transform: translateY(-3px);
+  border-color: #00aeca;
+  box-shadow: 0 8px 24px rgb(0 217 255 / 10%);
+}
+
+.feature,
+.item {
+  padding: 1.5rem;
+  border: 1px solid #2b3d56;
+  border-radius: 0.75rem;
+}
+
+.feature {
+  border-color: #31516c;
+  border-inline-start: 4px solid #00d9ff;
+}
+
+.feature-content {
+  inline-size: 100%;
+  max-inline-size: 52rem;
+}
+
+/* Used in the grid items */
+.feature h1 {
+  max-inline-size: none;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  text-align: center;
+}
+
+.how-it-works h1 {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .placement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature,
+  .item {
+    padding: 1.25rem;
+  }
+}
+
+
+/* For Mobile Use */
+@media (max-width: 600px) {
+    .top-nav {
+        flex-wrap: wrap;
+        gap: 0.25rem;
+    }
+
+    .top-nav a {
+        padding-inline: 0.75rem;
+    }
+}
