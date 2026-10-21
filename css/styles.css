@@ -107,7 +107,115 @@ p {
 
 .how-it-works {
   grid-column: 1;
-  min-block-size: 18rem;
+  block-size: 18rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.review-preview {
+  grid-column: 2;
+}
+
+.review-image {
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-block-end: 1rem;
+  border-radius: 0.5rem;
+}
+
+.reviews-page {
+  padding-block: 2rem 3rem;
+}
+
+.reviews-heading {
+  margin-block-end: 2rem;
+  text-align: center;
+}
+
+.reviews-heading h1 {
+  margin-block: 0;
+  font-size: clamp(2.5rem, 7vw, 4rem);
+  letter-spacing: 0.08em;
+}
+
+.reviews-heading p {
+  margin-block: 0.5rem 0;
+  color: #00d9ff;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-auto-columns: 340px;
+  grid-auto-flow: column;
+  gap: 1.25rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.reviews-grid,
+.how-it-works {
+  scrollbar-color: #00aeca #0b1220;
+  scrollbar-width: thin;
+}
+
+.reviews-grid::-webkit-scrollbar,
+.how-it-works::-webkit-scrollbar {
+  width: 0.65rem;
+  height: 0.65rem;
+}
+
+.reviews-grid::-webkit-scrollbar-track,
+.how-it-works::-webkit-scrollbar-track {
+  background: #0b1220;
+  border: 1px solid #26354d;
+  border-radius: 999px;
+}
+
+.reviews-grid::-webkit-scrollbar-thumb,
+.how-it-works::-webkit-scrollbar-thumb {
+  background: #00aeca;
+  border: 2px solid #0b1220;
+  border-radius: 999px;
+}
+
+.reviews-grid::-webkit-scrollbar-thumb:hover,
+.how-it-works::-webkit-scrollbar-thumb:hover {
+  background: #00d9ff;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.25rem;
+  background: linear-gradient(145deg, #18263a, #121c2d);
+  border: 1px solid #2b3d56;
+  border-radius: 0.75rem;
+  scroll-snap-align: start;
+}
+
+.review-card h2 {
+  margin-block: 0 1rem;
+  font-size: 1.35rem;
+}
+
+.review-card img {
+  display: block;
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.review-card .help-button {
+  align-self: flex-start;
+  margin-block-start: 1rem;
 }
 
 .item:hover {
@@ -123,6 +231,12 @@ p {
   border-radius: 0.75rem;
 }
 
+.how-it-works-content {
+  width: 100%;
+  min-height: 320px;
+  padding: 1rem;
+}
+
 .feature {
   border-color: #31516c;
   border-inline-start: 4px solid #00d9ff;
@@ -131,6 +245,8 @@ p {
 .feature-content {
   inline-size: 100%;
   max-inline-size: 52rem;
+  margin-inline: auto;
+  text-align: center;
 }
 
 /* Used in the grid items */
@@ -149,6 +265,10 @@ p {
 @media (max-width: 600px) {
   .placement-grid {
     grid-template-columns: 1fr;
+  }
+
+  .review-preview {
+    grid-column: 1;
   }
 
   .feature,
